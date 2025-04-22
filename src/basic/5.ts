@@ -7,15 +7,6 @@ enum DayOfWeek {
   Saturday,
   Sunday,
 }
-type DayOfWeekStatus = Record<DayOfWeek, boolean>;
-const isWeekend = (): DayOfWeekStatus => {
-  return {
-    [DayOfWeek.Monday]: false,
-    [DayOfWeek.Tuesday]: false,
-    [DayOfWeek.Wednesday]: false,
-    [DayOfWeek.Thursday]: false,
-    [DayOfWeek.Friday]: false,
-    [DayOfWeek.Saturday]: true,
-    [DayOfWeek.Sunday]: true,
-  };
+const isWeekend = (day: DayOfWeek): boolean => {
+  return day === DayOfWeek.Saturday || day === DayOfWeek.Sunday;
 };
